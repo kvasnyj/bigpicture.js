@@ -45,7 +45,11 @@ var bigpicture = (function() {
   $(bp).on('input', '.text', function() { redoSearch = true; });
 
   function updateTextPosition(e) {
-    e.style.fontSize = $(e).data("size") / current.zoom + 'px';
+    var size = $(e).data("size") / current.zoom;
+    var opacity = (10-size)/190 + 1;
+    e.style.opacity = opacity > 0 ? opacity : 0;
+    e.style.fontSize = size + 'px';
+
     e.style.left = ($(e).data("x") - current.x) / current.zoom - bp.x + 'px';
     e.style.top = ($(e).data("y") - current.y) / current.zoom - bp.y + 'px';
   }
