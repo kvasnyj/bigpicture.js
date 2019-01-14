@@ -46,7 +46,7 @@ var bigpicture = (function() {
 
   function updateTextPosition(e) {
     var size = $(e).data("size") / current.zoom;
-    var opacity = (10-size)/190 + 1;
+    var opacity = (10-size)/(200-10) + (1-0);
     e.style.opacity = opacity > 0 ? opacity : 0;
     e.style.fontSize = size + 'px';
 
